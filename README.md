@@ -131,3 +131,6 @@ This counter counts the number of response errors (responses where the http stat
 # TYPE keycloak_response_errors counter
 keycloak_response_errors{code="500",method="GET",route="/",} 1
 ```
+
+## Contribution
+Feel free to contribute, new ideas, please contact me, there's sonething that we could work together;)
