@@ -7,13 +7,11 @@ import org.keycloak.events.admin.AdminEvent;
 
 public class MetricsEventListener implements EventListenerProvider {
 
-    public final static String ID = "metrics-listener";
-
-    private final static Logger logger = Logger.getLogger(MetricsEventListener.class);
+    private static final Logger logger = Logger.getLogger(MetricsEventListener.class);
 
     @Override
     public void onEvent(Event event) {
-        logEventDetails(event);
+        this.logEventDetails(event);
 
         switch (event.getType()) {
             case LOGIN:
@@ -32,7 +30,7 @@ public class MetricsEventListener implements EventListenerProvider {
 
     @Override
     public void onEvent(AdminEvent event, boolean includeRepresentation) {
-        logAdminEventDetails(event);
+        this.logAdminEventDetails(event);
 
         PrometheusExporter.instance().recordGenericAdminEvent(event);
     }

@@ -7,6 +7,7 @@ import javax.ws.rs.container.ContainerResponseFilter;
 
 public final class MetricsFilter implements ContainerRequestFilter, ContainerResponseFilter {
     private static final String METRICS_REQUEST_TIMESTAMP = "metrics.requestTimestamp";
+
     private static final MetricsFilter INSTANCE = new MetricsFilter();
 
     public static MetricsFilter instance() {

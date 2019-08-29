@@ -17,20 +17,27 @@ import java.util.Map;
 
 public final class PrometheusExporter {
 
-    private final static String USER_EVENT_PREFIX = "keycloak_user_event_";
-    private final static String ADMIN_EVENT_PREFIX = "keycloak_admin_event_";
-    private final static String PROVIDER_KEYCLOAK_OPENID = "keycloak";
+    private static final String USER_EVENT_PREFIX = "keycloak_user_event_";
 
-    private final static PrometheusExporter INSTANCE = new PrometheusExporter();
+    private static final String ADMIN_EVENT_PREFIX = "keycloak_admin_event_";
 
-    private final static Logger logger = Logger.getLogger(PrometheusExporter.class);
+    private static final String PROVIDER_KEYCLOAK_OPENID = "keycloak";
+
+    private static final PrometheusExporter INSTANCE = new PrometheusExporter();
+
+    private static final Logger logger = Logger.getLogger(PrometheusExporter.class);
 
     // these fields are package private on purpose
     final Map<String, Counter> counters = new HashMap<>();
+
     final Counter totalLogins;
+
     final Counter totalFailedLoginAttempts;
+
     final Counter totalRegistrations;
+
     final Counter responseErrors;
+
     final Histogram requestDuration;
 
     private PrometheusExporter() {

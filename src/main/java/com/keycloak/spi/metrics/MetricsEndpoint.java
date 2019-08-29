@@ -14,7 +14,11 @@ import java.util.Map;
 public class MetricsEndpoint implements RealmResourceProvider, ServerInfoAwareProviderFactory {
 
     // The ID of the provider is also used as the name of the endpoint
-    public final static String ID = "metrics";
+    private static final String METRICS_ENDPOINT_ID = "metrics";
+
+    private static final String MERICS_ENDPOINT_ID_VALUE = "prometheus";
+
+
 
     @Override
     public Object getResource() {
@@ -35,8 +39,8 @@ public class MetricsEndpoint implements RealmResourceProvider, ServerInfoAwarePr
 
     @Override
     public Map<String, String> getOperationalInfo() {
-        Map<String, String> ret = new LinkedHashMap<>();
-        ret.put("metrics", "prometheus");
-        return ret;
+        Map<String, String> operationalInfoMap = new LinkedHashMap<>();
+        operationalInfoMap.put(METRICS_ENDPOINT_ID, MERICS_ENDPOINT_ID_VALUE);
+        return operationalInfoMap;
     }
 }

@@ -8,6 +8,9 @@ import org.keycloak.services.resource.RealmResourceProvider;
 import org.keycloak.services.resource.RealmResourceProviderFactory;
 
 public class MetricsEndpointFactory implements RealmResourceProviderFactory {
+
+    private static final String METRICS_ENDPOINT_ID = "metrics";
+
     @Override
     public RealmResourceProvider create(KeycloakSession session) {
         return new MetricsEndpoint();
@@ -34,6 +37,6 @@ public class MetricsEndpointFactory implements RealmResourceProviderFactory {
 
     @Override
     public String getId() {
-        return MetricsEndpoint.ID;
+        return METRICS_ENDPOINT_ID;
     }
 }

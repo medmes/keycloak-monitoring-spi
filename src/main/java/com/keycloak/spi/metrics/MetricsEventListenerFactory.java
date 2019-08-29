@@ -8,6 +8,8 @@ import org.keycloak.models.KeycloakSessionFactory;
 
 public class MetricsEventListenerFactory implements EventListenerProviderFactory {
 
+    private static final String METRICS_LISTENER_ID = "metrics-listener";
+
     @Override
     public EventListenerProvider create(KeycloakSession session) {
         return new MetricsEventListener();
@@ -30,6 +32,6 @@ public class MetricsEventListenerFactory implements EventListenerProviderFactory
 
     @Override
     public String getId() {
-        return MetricsEventListener.ID;
+        return METRICS_LISTENER_ID;
     }
 }
