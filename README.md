@@ -1,5 +1,8 @@
 # keycloak spi for prometheus, exposing metrics
 
+
+> **⚠️ WARNING: This project is archived and will no longer be maintained. No further updates, bug fixes, or security patches will be provided. Use it at your own risk.**
+
 # Keycloak SPI Metrics
 
 A [Service Provider](https://www.keycloak.org/docs/6.0/server_development/index.html#_providers) that extends Keycloak by adding a new endpoint. The endpoint should return metrics data ready to be scraped by [Prometheus](https://prometheus.io/).
